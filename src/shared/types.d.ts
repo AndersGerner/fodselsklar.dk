@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 
 interface Header {
   title?: string | ReactElement;
@@ -13,10 +13,14 @@ interface HeaderWidgetProps {
   titleClassname?: string;
 }
 
+interface IconProps {
+  className?: string;
+}
+
 interface CallToAction {
   text: string;
   href: string;
-  icon?: Function;
+  icon?: FC<IconProps>;
   targetBlank?: boolean;
   btnText?: 'uppercase' | 'capitalize';
   btnType?: 'primary' | 'secondary';
@@ -59,7 +63,7 @@ interface RadioBtn {
 }
 
 interface SmallForm {
-  icon?: Function;
+  icon?: FC<IconProps>;
   input: Input;
   btn: Button;
 }
@@ -86,7 +90,7 @@ interface Item {
   description?: string | Array<string>;
   href?: string;
   form?: SmallForm;
-  icon?: Function;
+  icon?: FC<IconProps>;
   callToAction?: CallToAction;
   link?: Link;
 }
@@ -103,7 +107,7 @@ interface Testimonial {
   occupation: string;
   comment: string;
   image?: Image;
-  icon?: Function;
+  icon?: FC<IconProps>;
   href?: string;
 }
 
@@ -111,7 +115,7 @@ interface Link {
   label?: string;
   href?: string;
   ariaLabel?: string;
-  icon?: Function;
+  icon?: FC<IconProps>;
 }
 
 interface Price {

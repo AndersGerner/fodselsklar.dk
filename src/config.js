@@ -1,10 +1,11 @@
 module.exports.SITE = {
-  name: 'TailNext',
+  name: 'Mental Ro - Fødselsklar A-Z',
 
-  origin: 'https://tailnext.vercel.app',
+  origin: 'https://mentalro.vercel.app',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'TailNext — Your website with Next.js + Tailwind CSS',
-  description: 'TailNext is a free and ready to start template to make your website using Next.js and Tailwind CSS.',
+  title: 'Mental Ro - Fødselsklar A-Z med Camilla Holsted',
+  description:
+    'Mental Ro - Certificeret Doula i Danmark. Tilbyder personlig fødselshjælp, smertelindring og følelsesmæssigstøtte til gravide og deres partnere. Book en konsultation i dag!',
 };

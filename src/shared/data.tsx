@@ -2,7 +2,6 @@ import {
   IconArrowDown,
   IconArrowsRightLeft,
   IconBrandFacebook,
-  IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandTailwind,
@@ -21,7 +20,6 @@ import {
   IconMessages,
   IconPhoneCall,
   IconRocket,
-  IconRss,
 } from '@tabler/icons-react';
 import {
   AnnouncementProps,
@@ -42,11 +40,11 @@ import {
   TestimonialProps,
 } from './types';
 
-import cameraFrontImg from '~/assets/images/camera-front.jpg';
 import cameraBackImg from '~/assets/images/camera-back.jpg';
+import cameraFrontImg from '~/assets/images/camera-front.jpg';
+import gasImg from '~/assets/images/gas.jpg';
 import heroImg from '~/assets/images/hero.jpg';
 import hero2Img from '~/assets/images/hero2.jpg';
-import gasImg from '~/assets/images/gas.jpg';
 import nextJsLogo from '~/assets/images/nextjs-logo.png';
 import reactLogo from '~/assets/images/react-logo.png';
 import tailwindCssLogo from '~/assets/images/tailwind-css-logo.png';
@@ -69,56 +67,87 @@ export const announcementData: AnnouncementProps = {
 export const headerData: HeaderProps = {
   links: [
     {
-      label: 'Pages',
+      label: 'Forside',
+      href: '/',
+    },
+    {
+      label: 'Om mig',
+      href: '/om-mig',
+    },
+    {
+      label: 'Jeg tilbyder',
       icon: IconChevronDown,
       links: [
         {
-          label: 'About us',
-          href: '/about',
+          label: 'Doula',
+          href: '/ydelser/doula',
         },
         {
-          label: 'Pricing',
-          href: '/pricing',
+          label: 'Fødselsforberedelse',
+          href: '/ydelser/foedselsforberedelse',
         },
         {
-          label: 'Contact us',
-          href: '/contact',
+          label: 'Rebozo',
+          href: '/ydelser/rebozo',
         },
         {
-          label: 'FAQs',
-          href: '/faqs',
+          label: 'Fødselsmodning',
+          href: '/ydelser/foedselsmodning',
         },
         {
-          label: 'Privacy Policy',
-          href: '/privacy',
+          label: 'Barsels kick-off',
+          href: '/ydelser/basels-kickoff',
         },
         {
-          label: 'Terms & Conditions',
-          href: '/terms',
+          label: 'Amning',
+          href: '/ydelser/amning',
+        },
+        /* {
+          label: 'Personlig træning',
+          href: '/ydelser/personlig-traening',
+        }, */
+        {
+          label: 'Træning for gravide',
+          href: '/ydelser/traening-for-gravide',
+        },
+        {
+          label: 'Udendørs holdtræning',
+          href: '/ydelser/udendoers-holdtraening',
+        },
+      ],
+    },
+
+    {
+      label: 'Mere',
+      icon: IconChevronDown,
+      links: [
+        {
+          label: 'Spørgsmål og svar',
+          href: '/faq',
+        },
+        {
+          label: 'Handelsbetingelser',
+          href: '/handelsbetingelser',
         },
       ],
     },
     {
-      label: 'Blog',
-      href: '/blog',
-    },
-    {
-      label: 'Contact',
-      href: '/contact',
+      label: 'Kontakt',
+      href: '/kontakt',
     },
   ],
   actions: [
     {
-      text: 'Download',
-      href: 'https://github.com/onwidget/tailnext',
-      targetBlank: true,
+      text: 'Book',
+      href: '/book',
+      targetBlank: false,
       btnType: 'primary',
     },
   ],
   isSticky: true,
   showToggleTheme: true,
   showRssFeed: false,
-  position: 'right',
+  position: 'center',
 };
 
 // Hero data
@@ -1228,15 +1257,11 @@ export const contact2Data: ContactProps = {
 
 // Footer data
 export const footerData: FooterProps = {
-  title: 'TailNext',
+  title: 'Mental Ro - Fødselsklar A-Z',
   links: [
     {
-      label: 'Terms & Conditions',
-      href: '/terms',
-    },
-    {
-      label: 'Privacy Policy',
-      href: '/privacy',
+      label: 'Handelsbetingelser',
+      href: '/handelsbetingelser',
     },
   ],
   columns: [
@@ -1346,21 +1371,17 @@ export const footerData: FooterProps = {
     },
   ],
   socials: [
-    { label: 'Twitter', icon: IconBrandTwitter, href: '#' },
-    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
-    { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
-    { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Instagram', icon: IconBrandInstagram, href: 'https://instagram.com/mental.ro.nu' },
+    { label: 'Facebook', icon: IconBrandFacebook, href: 'https://www.facebook.com/Mental.Ro.Nu' },
   ],
   footNote: (
     <div className="mr-4 text-sm dark:text-slate-400">
-      <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
-      Made by{' '}
-      <a className="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/">
+      Udviklet af{' '}
+      <a className="text-blue-600 hover:underline dark:text-gray-200" href="https://onevo.dk/">
         {' '}
-        onWidget
+        Onèvo ApS
       </a>{' '}
-      · All rights reserved.
+      · Alle rettigheder forbeholdes.
     </div>
   ),
 };
@@ -1369,44 +1390,36 @@ export const footerData: FooterProps = {
 export const footerData2: FooterProps = {
   links: [
     {
-      label: 'Terms & Conditions',
-      href: '/terms',
-    },
-    {
-      label: 'Privacy Policy',
-      href: '/privacy',
+      label: 'Handelsbetingelser',
+      href: '/handelsbetingelser',
     },
   ],
   columns: [
     {
-      title: 'Address',
-      texts: ['51 Phasellus Avenue Maecenas', 'Aliquam, AQ 52098'],
+      title: 'Adresse ',
+      texts: ['Frederiksbro Allè 104, 4.TV', '3400 Hillerød'],
     },
     {
-      title: 'Phone',
-      texts: ['Reception: +105 123 4567', 'Office: +107 235 7890'],
+      title: 'Telefon',
+      texts: ['+45 22 59 49 03'],
     },
     {
       title: 'Email',
-      texts: ['Office: info@example.com', 'Site: https://example.com'],
+      texts: ['kontakt@mentalro.nu'],
     },
   ],
   socials: [
-    { label: 'Twitter', icon: IconBrandTwitter, href: '#' },
-    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
-    { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
-    { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Instagram', icon: IconBrandInstagram, href: 'https://instagram.com/mental.ro.nu' },
+    { label: 'Facebook', icon: IconBrandFacebook, href: 'https://www.facebook.com/Mental.Ro.Nu' },
   ],
   footNote: (
     <div className="mr-4 text-sm dark:text-slate-400">
-      <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
-      Made by{' '}
-      <a className="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/">
+      Udviklet af{' '}
+      <a className="text-blue-600 hover:underline dark:text-gray-200" href="https://onevo.dk/">
         {' '}
-        onWidget
+        Onèvo ApS
       </a>{' '}
-      · All rights reserved.
+      · Alle rettigheder forbeholdes.
     </div>
   ),
 };
