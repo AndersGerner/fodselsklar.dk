@@ -2,14 +2,13 @@ import md from 'markdown-it';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-import { findLatestPosts, findPostBySlug } from '~/utils/posts';
+import { findContentBySlug, findLatestPosts } from '~/utils/posts';
 
 export const dynamicParams = false;
 
 const getFormattedDate = (date) => date;
-console.log("YDELSER PAGE")
-export async function generateMetadata({ params}) {
-  const post = await findPostBySlug(params.slug, "services");
+export async function generateMetadata({ params }) {
+  const post = await findContentBySlug(params.slug, 'ydelser');
   if (!post) {
     return notFound();
   }
@@ -21,8 +20,8 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-  const post = await findPostBySlug(params.slug, "services");
-  console.log("🚀 ~ file: page.jsx:25 ~ Page ~ post:", post)
+  const post = await findContentBySlug(params.slug, 'ydelser');
+  console.log('🚀 ~ file: page.jsx:25 ~ Page ~ post:', post);
 
   if (!post) {
     return notFound();

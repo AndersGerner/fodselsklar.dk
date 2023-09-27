@@ -1,0 +1,14 @@
+{
+  "groups": [
+    {
+      "name": "blog",
+      "basePath": "/blog",
+      "pagesDir": "app/(blog)"
+    },
+    {
+      "name": "ydelser",
+      "basePath": "/ydelser",
+      "pagesDir": "app/(ydelser)"
+    }
+  ]
+}

@@ -24,6 +24,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(ydelser)/ydelser/page.tsx", "app/(ydelser)/[slug]/page.jsx", "app/(pages)/404.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/ydelser/page.tsx", "app/ydelser/[slug]/page.jsx", "app/(pages)/404.js"],
   "exclude": ["node_modules"]
 }

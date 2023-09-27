@@ -40,11 +40,10 @@ import {
   TestimonialProps,
 } from './types';
 
+import camillaHolsted1 from '~/assets/images/CamillaHolsted1.jpg';
 import cameraBackImg from '~/assets/images/camera-back.jpg';
 import cameraFrontImg from '~/assets/images/camera-front.jpg';
 import gasImg from '~/assets/images/gas.jpg';
-import heroImg from '~/assets/images/hero.jpg';
-import hero2Img from '~/assets/images/hero2.jpg';
 import nextJsLogo from '~/assets/images/nextjs-logo.png';
 import reactLogo from '~/assets/images/react-logo.png';
 import tailwindCssLogo from '~/assets/images/tailwind-css-logo.png';
@@ -152,59 +151,40 @@ export const headerData: HeaderProps = {
 
 // Hero data
 export const heroData: HeroProps = {
-  title: (
-    <>
-      Free template for <span className="hidden md:inline">starts a website using</span> <span>Next.js</span> +{' '}
-      <span className="sm:whitespace-nowrap">Tailwind CSS</span>
-    </>
-  ),
-  subtitle: (
-    <>
-      <span className="hidden md:inline">
-        <span className="font-semibold underline decoration-primary-600 decoration-wavy decoration-1 underline-offset-2">
-          TailNext
-        </span>{' '}
-        is a production ready template to start your new website using <em>Next.js</em> + <em>Tailwind CSS</em>.
-      </span>{' '}
-      It has been designed following Best Practices, SEO, Accessibility, Dark Mode, great Page Speed, image
-      optimization.
-    </>
-  ),
+  title: 'Mental Ro',
+  subtitle: 'Fødselsklar A-Z',
   callToAction: {
-    text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
-    icon: IconDownload,
+    text: 'Kontakt',
+    href: '/kontakt',
+    icon: IconPhoneCall,
     targetBlank: true,
     btnType: 'primary',
   },
-  callToAction2: {
-    text: 'Learn more',
-    href: '/',
-  },
+
   image: {
-    src: heroImg,
+    src: 'https://mentalro.nu/wp-content/uploads/2021/01/AfterlightImage-1-scaled.jpg',
     alt: 'Hero TailNext',
   },
 };
 
 // Hero2 data
 export const hero2Data: HeroProps = {
-  title: 'Great companies are made by great people',
+  title: 'Camilla Holsted, Doula og Personlig træner',
   subtitle:
-    'Vivamus venenatis, lectus a pellentesque placerat, felis tellus ultrices eros, et aliquam sapien nibh sed sem. Fusce ut ante eget purus viverra malesuada. Morbi eget mi maximus, ultricies urna eget, tristique lorem. Fusce cursus venenatis quam, a blandit lectus vulputate id. Praesent id interdum orci, vitae condimentum dui. Fusce pulvinar ante eget mattis semper. Suspendisse in diam massa.',
+    'Jeg hedder Camilla Holsted, er født i 1994 og er mor til 2 banditter på hhv. 5 og 8 år. Jeg er opvokset i Hillerød, Nordsjælland, hvor jeg bor i en helt nybygget lejlighed med udsigt over byen og Frederiksborg slot. Jeg har selv formet min karriere gennem tiden og er uddannet personlig træner, Vanecoach, recovery mentor og psykomotorisk terapeut (igangværende). ',
   callToAction: {
-    text: 'View jobs',
-    href: 'https://www.linkedin.com/',
+    text: 'Kontakt',
+    href: '/contact',
     targetBlank: true,
     btnType: 'primary',
   },
-  callToAction2: {
-    text: 'Contact us',
-    href: '/contact',
-  },
+  /* callToAction2: {
+    text: 'Kontakt',
+    href: '/kontakt',
+  }, */
   image: {
-    src: hero2Img,
-    alt: 'Hero TailNext',
+    src: camillaHolsted1,
+    alt: 'Camilla Holsted',
   },
 };
 
@@ -615,39 +595,63 @@ export const featuresData2: FeaturesProps = {
 // Feature data 3
 export const featuresData3: FeaturesProps = {
   header: {
-    title: 'Services',
+    title: 'Min historie',
+    highlight: 'Hvorfor mig?',
   },
+  content: (
+    <>
+      <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">
+        Jeg har et brændende hjerte for at bidrage til, at så mange kvinder og par som muligt, får den bedste
+        graviditet, fødsel og start på forældreskabet. Jeg er dybt fascineret af fødslens fysiologi og de forskellige
+        faser, den bevæger sig igennem samt de fysiske og mentale forandringer vi gennemgår, når vi er gravide, føder og
+        bliver forælder. Generelt er jeg vildt fascineret af, hvad kroppen kan og hvad den gør, når den er gravid og
+        føder et barn.
+      </p>
+
+      <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">
+        Jeg tror på, at når vi næres med ro, omsorg, tryghed og ikke mindst viden, skabes der balance mellem krop og
+        sind og det giver os mulighed for at træffe gode beslutninger under graviditet, fødsel og tiden efter. Netop
+        dette, har jeg stor interesse i at bidrage med, for dig/jer.{' '}
+      </p>
+
+      <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">
+        Der er mange veje til Rom og derfor er der ikke noget rigtigt og forkert - jeg støtter, vejleder og informerer
+        dig/jer lige præcis dér, hvor der er brug for det. Alle er velkommen hos mig og jeg skræddersyr hvert enkelt
+        forløb, efter hvad der ønskes. Så uanset om du skal føde på hospitalet, hjemme eller har andre, alternative
+        ønsker, så er jeg der for dig og din partner. Ønsker du at føde med eller uden medicinsk smertelindring eller
+        skal dy føde ved planlagt kejsersnit, så er jeg der og støtter op om dit/jeres valg.
+      </p>
+    </>
+  ),
   items: [
     {
-      title: 'Next.Js + Tailwind CSS Integration',
-      description: 'Nullam non sodales massa. Ut justo neque, elementum et vehicula vel, pellentesque non orci.',
-      icon: IconBrandTailwind,
+      title: 'Recovery mentor ',
+      description: 'v. Region Hovedstadens psykiatri',
+      image: { src: 'https://mentalro.nu/wp-content/uploads/2022/10/PEER.jpg', alt: 'Camilla Holsted' },
     },
     {
-      title: 'Ready-to-use Components',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      icon: IconComponents,
+      title: 'Madmentor',
+      description: 'v. Marie Steenberger. Jeg har været mentortræner på uddannelsen 2022.',
     },
     {
-      title: 'Best Practices',
-      description: 'Morbi sit amet arcu vitae metus molestie auctor sit amet in risus. Sed vel lacinia purus.',
-      icon: IconListCheck,
+      title: 'Kursus og workshop i træning under graviditet og efterfødsel',
+      description: 'v. Fitness Institute',
     },
     {
-      title: 'Excellent Page Speed',
-      description: 'Phasellus id cursus urna. Nullam feugiat tellus sed euismod venenatis.',
-      icon: IconRocket,
+      title: 'VaneCoach',
+      description: 'v. Anne Gaardmand og Morten Elsøe. Jeg har tidligere været coachtræner på 2 hold i 2020.',
     },
     {
-      title: 'Search Engine Optimization (SEO)',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-      icon: IconArrowsRightLeft,
+      title: 'Narrativt kursus',
+      description: 'v. Landsforeningen spiseforstyrrelser og selvskade',
     },
     {
-      title: 'Open to new ideas and contributions',
-      description: 'Maecenas urna augue, commodo vitae lectus euismod, tempor aliquam arcu.',
-      icon: IconBulb,
+      title: 'Personlig træner og kostvejleder (EREPS certificeret)',
+      description: 'v. Fitness Institute ',
+    },
+    {
+      title: 'Pilates instruktør',
+      description: 'v. PilatesCph ',
     },
   ],
 };
@@ -1090,20 +1094,20 @@ export const comparisonData: ComparisonProps = {
 export const statsData: StatsProps = {
   items: [
     {
-      title: 13269,
-      description: 'Downloads',
+      title: 1,
+      description: 'Nærvær og omsorg',
     },
     {
-      title: 24.8,
-      description: 'Stars',
+      title: 2,
+      description: 'Tryghed',
     },
     {
-      title: 1767.77,
-      description: 'Forks',
+      title: 3,
+      description: 'Balance krop/sind',
     },
     {
-      title: 484000,
-      description: 'Users',
+      title: 100,
+      description: 'Støtte til dig/jer',
     },
   ],
 };

@@ -93,6 +93,7 @@ interface Item {
   icon?: FC<IconProps>;
   callToAction?: CallToAction;
   link?: Link;
+  image?: Image;
 }
 
 interface Team {
@@ -188,6 +189,7 @@ interface CallToActionProps {
 
 interface FeaturesProps {
   header?: Header;
+  content?: string | ReactElement;
   items: Array<Item>;
 }
 
