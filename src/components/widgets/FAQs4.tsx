@@ -1,12 +1,13 @@
 'use client';
 
-import HeaderWidget from '../common/HeaderWidget';
-import Collapse from '../common/Collapse';
 import { IconMinus, IconPlus } from '@tabler/icons-react';
-import { FAQsProps, Item, Tab } from '~/shared/types';
+import Head from 'next/head';
 import { useState } from 'react';
 import useWindowSize from '~/hooks/useWindowSize';
+import { FAQsProps, Item, Tab } from '~/shared/types';
+import Collapse from '../common/Collapse';
 import Dropdown from '../common/Dropdown';
+import HeaderWidget from '../common/HeaderWidget';
 
 const FAQs4 = ({ header, tabs }: FAQsProps) => {
   const { width } = useWindowSize();
@@ -52,16 +53,34 @@ const FAQs4 = ({ header, tabs }: FAQsProps) => {
             )}
             <div className="mt-4 h-fit md:col-span-2 md:mx-4 md:mt-0 md:px-4">
               {(tabs as Tab[]).map((tab, index) => (
-                <div key={`tab-${index}`} className="">
-                  {activeTab === index && (
-                    <Collapse
-                      items={tab.items as Item[]}
-                      classCollapseItem="border-b border-solid border-slate-300 dark:border-slate-500 py-5"
-                      iconUp={<IconMinus className="h-6 w-6 text-primary-600 dark:text-slate-200" />}
-                      iconDown={<IconPlus className="h-6 w-6 text-primary-600 dark:text-slate-200" />}
-                    />
-                  )}
-                </div>
+                <>
+                  <Head>
+                    <script type="application/ld+json">
+                      {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'FAQPage',
+                        mainEntity: tab.items?.map((item: Item) => ({
+                          '@type': 'Question',
+                          name: item.title,
+                          acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: item.description,
+                          },
+                        })),
+                      })}
+                    </script>
+                  </Head>
+                  <div key={`tab-${index}`} className="">
+                    {activeTab === index && (
+                      <Collapse
+                        items={tab.items as Item[]}
+                        classCollapseItem="border-b border-solid border-slate-300 dark:border-slate-500 py-5"
+                        iconUp={<IconMinus className="h-6 w-6 text-primary-600 dark:text-slate-200" />}
+                        iconDown={<IconPlus className="h-6 w-6 text-primary-600 dark:text-slate-200" />}
+                      />
+                    )}
+                  </div>
+                </>
               ))}
             </div>
           </div>

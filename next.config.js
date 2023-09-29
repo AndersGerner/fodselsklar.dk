@@ -1,9 +1,7 @@
 const SITE = require('./src/config.js').SITE;
-const routeGroups = require('./route-groups.json');
 
 /** @type {import('next').NextConfig} */
 module.exports = {
-  routeGroups,
   reactStrictMode: true,
 
   trailingSlash: SITE.trailingSlash,

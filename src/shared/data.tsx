@@ -9,7 +9,6 @@ import {
   IconBulb,
   IconCheck,
   IconChevronDown,
-  IconClock,
   IconComponents,
   IconDownload,
   IconHeadset,
@@ -40,14 +39,9 @@ import {
   TestimonialProps,
 } from './types';
 
-import camillaHolsted1 from '~/assets/images/CamillaHolsted1.jpg';
-import cameraBackImg from '~/assets/images/camera-back.jpg';
-import cameraFrontImg from '~/assets/images/camera-front.jpg';
+import camillaHolsted1 from '~/assets/images/camilla-holsted1.jpg';
+import camillaHolsted2 from '~/assets/images/camilla-holsted2.jpg';
 import gasImg from '~/assets/images/gas.jpg';
-import nextJsLogo from '~/assets/images/nextjs-logo.png';
-import reactLogo from '~/assets/images/react-logo.png';
-import tailwindCssLogo from '~/assets/images/tailwind-css-logo.png';
-import typescriptLogo from '~/assets/images/typescript-logo.png';
 
 // Announcement data
 export const announcementData: AnnouncementProps = {
@@ -95,7 +89,7 @@ export const headerData: HeaderProps = {
         },
         {
           label: 'Barsels kick-off',
-          href: '/ydelser/basels-kickoff',
+          href: '/ydelser/barsels-kickoff',
         },
         {
           label: 'Amning',
@@ -111,7 +105,7 @@ export const headerData: HeaderProps = {
         },
         {
           label: 'Udendørs holdtræning',
-          href: '/ydelser/udendoers-holdtraening',
+          href: '/ydelser/udendors-holdtraening',
         },
       ],
     },
@@ -120,6 +114,10 @@ export const headerData: HeaderProps = {
       label: 'Mere',
       icon: IconChevronDown,
       links: [
+        {
+          label: 'Blog',
+          href: '/blog',
+        },
         {
           label: 'Spørgsmål og svar',
           href: '/faq',
@@ -162,7 +160,7 @@ export const heroData: HeroProps = {
   },
 
   image: {
-    src: 'https://mentalro.nu/wp-content/uploads/2021/01/AfterlightImage-1-scaled.jpg',
+    src: camillaHolsted2,
     alt: 'Hero TailNext',
   },
 };
@@ -191,7 +189,7 @@ export const hero2Data: HeroProps = {
 // SocialProof data
 export const socialProofData: SocialProofProps = {
   images: [
-    {
+    /* {
       link: 'https://nextjs.org/',
       src: nextJsLogo,
       alt: 'NextJs Logo',
@@ -200,17 +198,7 @@ export const socialProofData: SocialProofProps = {
       link: 'https://react.dev/',
       src: reactLogo,
       alt: 'React Logo',
-    },
-    {
-      link: 'https://tailwindcss.com/',
-      src: tailwindCssLogo,
-      alt: 'Tailwind CSS Logo',
-    },
-    {
-      link: 'https://www.typescriptlang.org/',
-      src: typescriptLogo,
-      alt: 'Typescript Logo',
-    },
+    }, */
   ],
 };
 
@@ -331,98 +319,81 @@ export const faqs3Data: FAQsProps = {
 // FAQS4 data
 export const faqs4Data: FAQsProps = {
   header: {
-    title: 'Frequently Asked Questions',
-    subtitle:
-      'Praesent rutrum purus in sem blandit, in consectetur mi pharetra. Ut sagittis sapien sit amet congue cursus. Nulla eu elementum ex, tincidunt semper nisi.',
+    title: 'Ofte Stillede Spørgsmål',
+    subtitle: 'Find svar på dine spørgsmål om graviditet, fødselsforberedelse, og doula-tjenester.',
     highlight: 'FAQS',
     position: 'center',
   },
   tabs: [
     {
       link: {
-        label: 'General',
+        label: 'Graviditet og Træning',
         href: '/tab1',
       },
       items: [
         {
-          title: 'What do I need to start?',
-          description: `Nunc mollis tempor quam, non fringilla elit sagittis in. Nullam vitae consectetur mi, a elementum arcu. Sed laoreet, ipsum et vehicula dignissim, leo orci pretium sem, ac condimentum tellus est quis ligula.`,
+          title: 'Er det sikkert at træne under graviditeten?',
+          description: `Ja, det er generelt sikkert at træne under graviditeten, så længe du har fået grønt lys fra din læge og træningen er tilpasset din individuelle situation.`,
         },
         {
-          title: 'How to install the NextJS + Tailwind CSS template?',
-          description: `Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend vestibulum nisl in iaculis. Mauris dictum ac purus vestibulum auctor. Praesent imperdiet lectus et massa faucibus, quis viverra massa rhoncus.`,
-        },
-        {
-          title: "What's something that you completely don't understand?",
-          description: `Mauris vitae eros a dui varius luctus. Suspendisse rutrum, sapien nec blandit bibendum, justo sapien sollicitudin erat, id aliquam sapien purus quis leo. Aliquam vulputate vestibulum consectetur.`,
-        },
-        {
-          title: "What's an example of when you changed your mind?",
-          description: `Nunc dapibus lacinia ipsum ut elementum. Integer in pretium sapien. Ut pretium nisl mauris, ut rutrum justo condimentum id. Etiam aliquet, arcu at iaculis laoreet, est arcu egestas sapien, eget sollicitudin odio orci et nunc.`,
-        },
-        {
-          title: 'What is something that you would really like to try again?',
-          description: `Duis in maximus mauris, id eleifend mauris. Nam a fringilla arcu. Curabitur convallis, tellus non aliquet rhoncus, lacus massa auctor eros, in interdum lectus augue sed augue. Fusce tempor ex id faucibus efficitur.`,
-        },
-        {
-          title: 'If you could only ask one question to each person you meet, what would that question be?',
-          description: `Nullam imperdiet sapien tincidunt erat dapibus faucibus. Vestibulum a sem nec lorem imperdiet scelerisque non sed lacus. Ut pulvinar id diam vitae auctor. Nam tempus, neque et elementum consectetur, ex ipsum pulvinar risus, vel sodales ligula tortor eu eros.`,
+          title: 'Hvilke typer træning tilbyder du for gravide?',
+          description: `Jeg tilbyder en række træningstyper, herunder styrketræning, konditionstræning, funktionel træning, yoga og pilates.`,
         },
       ],
     },
     {
       link: {
-        label: 'Plans, prices and payments',
+        label: 'Fødselsforberedelse',
         href: '/tab2',
       },
       items: [
         {
-          title: 'Which plan is best for me?',
-          description: `Nunc mollis tempor quam, non fringilla elit sagittis in. Nullam vitae consectetur mi, a elementum arcu. Sed laoreet, ipsum et vehicula dignissim, leo orci pretium sem, ac condimentum tellus est quis ligula.`,
+          title: 'Hvad inkluderer dit fødselsforberedelsesprogram?',
+          description: `Mit program inkluderer både teoretisk og praktisk forberedelse, der dækker alt fra fødslens faser til smertehåndtering og partnerens rolle.`,
         },
         {
-          title: 'What are my payment options?',
-          description: `Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend vestibulum nisl in iaculis. Mauris dictum ac purus vestibulum auctor. Praesent imperdiet lectus et massa faucibus, quis viverra massa rhoncus.`,
-        },
-        {
-          title: 'How do I change my plan to a different one?',
-          description: `Mauris vitae eros a dui varius luctus. Suspendisse rutrum, sapien nec blandit bibendum, justo sapien sollicitudin erat, id aliquam sapien purus quis leo. Aliquam vulputate vestibulum consectetur.`,
-        },
-        {
-          title: 'What happen at the end of my free trial?',
-          description: `Nunc dapibus lacinia ipsum ut elementum. Integer in pretium sapien. Ut pretium nisl mauris, ut rutrum justo condimentum id. Etiam aliquet, arcu at iaculis laoreet, est arcu egestas sapien, eget sollicitudin odio orci et nunc.`,
-        },
-        {
-          title: 'Can I import data from other tools?',
-          description: `Duis in maximus mauris, id eleifend mauris. Nam a fringilla arcu. Curabitur convallis, tellus non aliquet rhoncus, lacus massa auctor eros, in interdum lectus augue sed augue. Fusce tempor ex id faucibus efficitur.`,
-        },
-        {
-          title: 'Can I cancel my plan at any time?',
-          description: `Nullam imperdiet sapien tincidunt erat dapibus faucibus. Vestibulum a sem nec lorem imperdiet scelerisque non sed lacus. Ut pulvinar id diam vitae auctor. Nam tempus, neque et elementum consectetur, ex ipsum pulvinar risus, vel sodales ligula tortor eu eros.`,
+          title: 'Er fødselsforberedelse nødvendig?',
+          description: `Fødselsforberedelse kan give dig og din partner værdifulde værktøjer til at håndtere fødslen og kan bidrage til en mere positiv oplevelse.`,
         },
       ],
     },
     {
       link: {
-        label: 'Others',
+        label: 'Doula Tjenester',
         href: '/tab3',
       },
       items: [
         {
-          title: 'How do I download the template?',
-          description: `In ullamcorper pellentesque ante, nec commodo ex euismod viverra. Phasellus facilisis, justo a bibendum pellentesque, nibh est egestas lectus, volutpat ullamcorper arcu ante ac dolor.`,
+          title: 'Hvad er en doula?',
+          description: `En doula er en professionel, der tilbyder emotionel, fysisk og informativ støtte under graviditet, fødsel og den tidlige postpartum periode.`,
         },
         {
-          title: 'How do I customize the template?',
-          description: `Pellentesque semper euismod malesuada. Curabitur quis lectus tortor. Aliquam efficitur pretium tellus, ut sagittis turpis dignissim eget. Etiam scelerisque nec risus eget iaculis. Nunc maximus metus id felis dapibus, sed ullamcorper sapien faucibus.`,
+          title: 'Hvordan kan en doula hjælpe mig?',
+          description: `En doula kan tilbyde personlig støtte, hjælpe med smertelindringsteknikker, og fungere som en fortaler for dig under fødslen.`,
+        },
+      ],
+    },
+    {
+      link: {
+        label: 'Handelsbetingelser',
+        href: '/tab4',
+      },
+      items: [
+        {
+          title: 'Hvordan foregår betalingen?',
+          description: `Betalingen foregår via bankoverførsel eller mobile betalingsløsninger. Alle priser er inklusive moms.`,
         },
         {
-          title: 'Does the template come with any tutorials or instructions?',
-          description: `Sed sagittis arcu suscipit auctor suscipit. Nam dapibus risus vitae tristique fermentum. In egestas turpis elit, id gravida diam dictum eu. Ut dictum libero ut rhoncus egestas. Ut sit amet tortor blandit, faucibus tellus vitae, consequat purus. Nullam id odio enim.`,
+          title: 'Hvad er din afbestillingspolitik?',
+          description: `Afbestilling skal ske senest 24 timer før den planlagte session for at undgå gebyrer. Afbestillinger inden for 24 timer vil blive faktureret fuldt ud.`,
         },
         {
-          title: 'Are there any additional fees or charges for using the template?',
-          description: `Fusce efficitur, augue et vulputate pharetra, augue turpis viverra turpis, id tempor purus eros sed erat. Curabitur blandit eget sem vitae malesuada.`,
+          title: 'Er der nogen garanti for dine tjenester?',
+          description: `Mens jeg stræber efter at yde den bedste service, kan resultaterne variere fra person til person. Derfor kan jeg ikke tilbyde en garanti for specifikke resultater.`,
+        },
+        {
+          title: 'Hvordan håndteres personlige oplysninger?',
+          description: `Alle personlige oplysninger behandles fortroligt og vil ikke blive delt med tredjeparter uden dit samtykke.`,
         },
       ],
     },
@@ -472,12 +443,11 @@ export const callToActionData: CallToActionProps = {
 
 // CallToAction2 data
 export const callToActionData2: CallToActionProps = {
-  title: 'Still have questions?',
-  subtitle:
-    'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut in leo odio. Cras finibus ex a ante convallis ullamcorper.',
+  title: 'Har du et spørgsmål?',
+  subtitle: 'Tag endelig fat i mig og lad os tage en snak',
   callToAction: {
-    text: 'Contact us',
-    href: '/contact',
+    text: 'Kontkat',
+    href: '/kontakt',
     btnType: 'primary',
   },
 };
@@ -656,67 +626,58 @@ export const featuresData3: FeaturesProps = {
   ],
 };
 
-// Content data
 export const contentData: ContentProps = {
   header: {
-    title: 'Aliquip definiebas ad est',
-    subtitle: 'Quando cetero his ne, eum admodum sapientem ut',
-    highlight: 'Content',
+    title: 'Velkommen til Din Rejse mod Forældreskab',
+    subtitle: 'Din støtte fra graviditet til forældreskab',
+    highlight: 'Forældreskab',
   },
   content:
-    'Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.',
+    'At blive forælder er en livsændrende oplevelse. Vi er her for at støtte dig gennem hele processen, fra graviditet til fødsel og forældreskab.',
   items: [
     {
-      title: 'Per ei quaeque sensibus',
-      description:
-        'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
+      title: 'Fødselsforberedelse',
+      description: 'Forbered dig mentalt og fysisk til fødslen med vores evidensbaserede metoder.',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
-      description:
-        'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
+      title: 'Doula Service',
+      description: 'Få personlig støtte før, under og efter fødslen fra en erfaren doula.',
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
-      description:
-        'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
+      title: 'Amning',
+      description: 'Få professionel vejledning og støtte til amning for at sikre en sund start for dit barn.',
     },
   ],
   image: {
-    src: cameraFrontImg,
-    alt: 'Colorful Image',
+    src: 'https://source.unsplash.com/random/1024x640/?pregnancy', // Replace with your image link
+    alt: 'Gravid kvinde og partner',
   },
   isReversed: false,
   isAfterContent: false,
 };
-
-// Content2 data
 export const content2Data: ContentProps = {
   content:
-    'Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nib dissentias, mei exerci tamquam euripidis cu.',
+    'Vi tilbyder en holistisk tilgang til graviditet og forældreskab. Vores metoder er evidensbaserede og tilpasset dine individuelle behov.',
   items: [
     {
-      title: 'Per ei quaeque sensibus',
+      title: 'Evidensbaseret Praksis',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
+      title: 'Personlig Støtte',
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'Fleksible Planer',
     },
     {
-      title: 'Per ei quaeque sensibus',
+      title: 'Professionel Vejledning',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
-    },
-    {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'Tillid og Fortrolighed',
     },
   ],
   image: {
-    src: cameraBackImg,
-    alt: 'Colorful Image',
+    src: 'https://source.unsplash.com/random/1024x640/?pregnancy,support', // Replace with your image link
+    alt: 'Doula og gravid kvinde',
   },
   isReversed: true,
   isAfterContent: true,
@@ -1115,53 +1076,52 @@ export const statsData: StatsProps = {
 // Contact data
 export const contactData: ContactProps = {
   header: {
-    title: 'Get in Touch',
-    subtitle: 'In hac habitasse platea dictumst',
-    highlight: 'Contact',
+    title: 'Skal vi tage en snak?',
+    subtitle: 'Jeg forsøger altid at vende tilbage inden for 24 timer',
+    highlight: 'Kontakt',
   },
-  content:
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut scelerisque sagittis ante, ac tincidunt sem venenatis ut.',
+  content: 'Jeg glæder mig til at høre fra dig.',
   items: [
     {
-      title: 'Our Address',
-      description: ['1230 Maecenas Street Donec Road', 'New York, EEUU'],
-      icon: IconMapPin,
-    },
-    {
-      title: 'Contact',
-      description: ['Mobile: +1 (123) 456-7890', 'Mail: tailnext@gmail.com'],
+      title: 'Email og telefon',
+      description: ['kontakt@mentalro.nu', '+45 22 59 49 03'],
       icon: IconPhoneCall,
     },
     {
-      title: 'Working hours',
+      title: 'Adresse',
+      description: ['Frederiksbro Allè 104, 4. TV', '3400 Hillerød'],
+      icon: IconMapPin,
+    },
+    /* {
+      title: 'Telefon',
       description: ['Monday - Friday: 08:00 - 17:00', 'Saturday & Sunday: 08:00 - 12:00'],
       icon: IconClock,
-    },
+    }, */
   ],
   form: {
-    title: 'Ready to Get Started?',
+    title: 'Hvordan kan jeg hjælpe dig/jer?',
     inputs: [
       {
         type: 'text',
         name: 'name',
         autocomplete: 'given-name',
-        placeholder: 'Your name',
+        placeholder: 'Dit navn',
       },
       {
         type: 'email',
         name: 'email',
         autocomplete: 'email',
-        placeholder: 'Your email address',
+        placeholder: 'Din email',
       },
     ],
     textarea: {
       cols: 30,
       rows: 5,
       name: 'textarea',
-      placeholder: 'Write your message...',
+      placeholder: 'Din besked',
     },
     btn: {
-      title: 'Send Message',
+      title: 'Send besked',
       type: 'submit',
     },
   },
@@ -1170,90 +1130,52 @@ export const contactData: ContactProps = {
 // Contact2 data
 export const contact2Data: ContactProps = {
   header: {
-    title: 'Get in Touch',
-    subtitle: 'In hac habitasse platea dictumst',
-    highlight: 'Contact',
+    title: 'Skal vi tage en snak?',
+    subtitle: 'Jeg forsøger altid at vende tilbage inden for 24 timer',
+    highlight: 'Kontakt',
   },
-  content:
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut scelerisque sagittis ante, ac tincidunt sem venenatis ut.',
+  content: 'Jeg glæder mig til at høre fra dig.',
   items: [
     {
-      title: 'Our Address',
-      description: ['1230 Maecenas Street Donec Road', 'New York, EEUU'],
-      icon: IconMapPin,
-    },
-    {
-      title: 'Contact',
-      description: ['Mobile: +1 (123) 456-7890', 'Mail: tailnext@gmail.com'],
+      title: 'Email og telefon',
+      description: ['kontakt@mentalro.nu', '+45 22 59 49 03'],
       icon: IconPhoneCall,
     },
     {
-      title: 'Working hours',
+      title: 'Adresse',
+      description: ['Frederiksbro Allè 104, 4. TV', '3400 Hillerød'],
+      icon: IconMapPin,
+    },
+    /* {
+      title: 'Telefon',
       description: ['Monday - Friday: 08:00 - 17:00', 'Saturday & Sunday: 08:00 - 12:00'],
       icon: IconClock,
-    },
+    }, */
   ],
   form: {
-    title: 'Ready to Get Started?',
-    description:
-      'Mauris consequat, urna vel varius auctor, enim risus ornare felis, at hendrerit erat justo eu justo. Curabitur sagittis efficitur aliquam. Duis eget porttitor lectus, vel pharetra ex. Nam volutpat nibh ut porta egestas.',
+    title: 'Hvordan kan jeg hjælpe dig/jer?',
     inputs: [
       {
         type: 'text',
-        label: 'First name',
         name: 'name',
         autocomplete: 'given-name',
-        placeholder: 'First name',
-      },
-      {
-        type: 'text',
-        label: 'Last name',
-        name: 'lastName',
-        placeholder: 'Last name',
+        placeholder: 'Dit navn',
       },
       {
         type: 'email',
-        label: 'Email address',
         name: 'email',
-        placeholder: 'Email address',
+        autocomplete: 'email',
+        placeholder: 'Din email',
       },
     ],
-    radioBtns: {
-      label: 'What is the reason for your contact?',
-      radios: [
-        {
-          label: 'General inquiries',
-        },
-        {
-          label: 'Technical help',
-        },
-        {
-          label: 'Claims',
-        },
-        {
-          label: 'Others',
-        },
-      ],
-    },
     textarea: {
       cols: 30,
       rows: 5,
-      label: 'How can we help you?',
       name: 'textarea',
-      placeholder: 'Write your message...',
+      placeholder: 'Din besked',
     },
-    checkboxes: [
-      {
-        label: 'Have you read our privacy policy?',
-        value: '',
-      },
-      {
-        label: 'Do you want to receive monthly updates by email?',
-        value: '',
-      },
-    ],
     btn: {
-      title: 'Send Message',
+      title: 'Send besked',
       type: 'submit',
     },
   },

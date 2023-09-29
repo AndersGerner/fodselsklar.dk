@@ -1,5 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
+import { Author } from 'next/dist/lib/metadata/types/metadata-types';
 import { join } from 'path';
 
 interface FrontMatter {
@@ -20,13 +21,17 @@ interface Content {
   excerpt: string;
   image: string;
   tags: string[];
+  authors: Author[];
+  keywords: string[];
+  category: string;
 }
 
 const BLOG_DIR = join(process.cwd(), 'src/content/blog');
 const SERVICES_DIR = join(process.cwd(), 'src/content/ydelser');
 
-const load = async (dir: string): Promise<Content[]> => {
-  const files = fs.readdirSync(dir);
+const load = async (dir: 'blog' | 'ydelser'): Promise<Content[]> => {
+  const directory = dir === 'blog' ? BLOG_DIR : SERVICES_DIR;
+  const files = fs.readdirSync(directory);
 
   const contents = await Promise.all(
     files
@@ -44,23 +49,23 @@ let _posts: Promise<Content[]> | null = null;
 let _services: Promise<Content[]> | null = null;
 
 export const fetchPosts = async (): Promise<Content[]> => {
-  _posts = _posts || load(BLOG_DIR);
+  _posts = _posts || load('blog');
   return await _posts;
 };
 
 export const fetchServices = async (): Promise<Content[]> => {
-  _services = _services || load(SERVICES_DIR);
+  _services = _services || load('ydelser');
   return await _services;
 };
 
 export const findLatestPosts = async ({ count }: { count?: number } = {}): Promise<Content[]> => {
-  const _count = count || 4;
+  const _count = count || 20;
   const posts = await fetchPosts();
   return posts.slice(_count * -1);
 };
 
 export const findLatestServices = async ({ count }: { count?: number } = {}): Promise<Content[]> => {
-  const _count = count || 4;
+  const _count = count || 20;
   const services = await fetchServices();
   return services.slice(_count * -1);
 };
@@ -80,27 +85,4 @@ export const findContentBySlug = async (slug: string, dir: 'blog' | 'ydelser'): 
     console.error(`An error occurred while fetching content by slug: ${e}`);
     return null;
   }
-};
-
-export const findPostsByIds = async (ids: string[]): Promise<Content[]> => {
-  return findContentByIds(ids, BLOG_DIR);
-};
-
-export const findServicesByIds = async (ids: string[]): Promise<Content[]> => {
-  return findContentByIds(ids, SERVICES_DIR);
-};
-
-export const findContentByIds = async (ids: string[], dir: string): Promise<Content[]> => {
-  if (!Array.isArray(ids)) return [];
-
-  const content = dir === BLOG_DIR ? await fetchPosts() : await fetchServices();
-
-  return ids.reduce((result: Content[], id: string) => {
-    content.some((item) => {
-      if (id === item.id) {
-        result.push(item);
-      }
-    });
-    return result;
-  }, []);
 };

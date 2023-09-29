@@ -1,34 +1,55 @@
 import md from 'markdown-it';
+import Head from 'next/head';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-import { findContentBySlug, findLatestPosts } from '~/utils/posts';
+import { findContentBySlug, findLatestServices } from '~/utils/posts';
 
 export const dynamicParams = false;
 
-const getFormattedDate = (date) => date;
-export async function generateMetadata({ params }) {
+const getFormattedDate = (date: string) => date;
+export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = await findContentBySlug(params.slug, 'ydelser');
   if (!post) {
     return notFound();
   }
-  return { title: post.title, description: post.description };
+  return {
+    title: post.title,
+    description: post.description,
+    authors: post.authors,
+    keywords: post.keywords,
+    category: post.category,
+  };
 }
 
 export async function generateStaticParams() {
-  return (await findLatestPosts()).map(({ slug }) => ({ slug }));
+  return (await findLatestServices()).map(({ slug }) => ({ slug }));
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const post = await findContentBySlug(params.slug, 'ydelser');
-  console.log('🚀 ~ file: page.jsx:25 ~ Page ~ post:', post);
 
   if (!post) {
     return notFound();
   }
 
+  const jsonLd = {
+    '@context': 'http://schema.org',
+    '@type': 'Service',
+    name: post.title,
+    description: post.description,
+    image: post.image,
+    provider: {
+      '@type': 'Person',
+      name: 'Camilla Holsted',
+    },
+  };
+
   return (
     <section className="mx-auto py-8 sm:py-16 lg:py-20">
+      <Head>
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </Head>
       <article>
         <header className={post.image ? 'text-center' : ''}>
           <p className="mx-auto max-w-3xl px-4 sm:px-6">
