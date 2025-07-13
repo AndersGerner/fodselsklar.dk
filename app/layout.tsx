@@ -10,23 +10,23 @@ import Footer2 from '~/components/widgets/Footer2';
 import { Inter as CustomFont } from 'next/font/google';
 import '~/assets/styles/base.css';
 
+import { generateSEOMetadata } from '~/utils/metadata';
+
 const customFont = CustomFont({ subsets: ['latin'], variable: '--font-custom' });
 
 export interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const metadata: Metadata = {
-  title: {
-    template: `%s — ${SITE.name}`,
-    default: SITE.title,
-  },
-  description: SITE.description,
-};
+export const metadata: Metadata = generateSEOMetadata({
+  title: 'Mental Ro - Fødselsklar A-Z med Camilla Holsted',
+  description: 'Certificeret Doula i Danmark. Tilbyder personlig fødselshjælp, smertelindring og følelsesmæssig støtte til gravide og deres partnere. Book en konsultation i dag!',
+  keywords: ['certificeret doula', 'fødselshjælp danmark', 'graviditetsstøtte'],
+});
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" className={`motion-safe:scroll-smooth 2xl:text-[24px] ${customFont.variable} font-sans`}>
+    <html lang="da" className={`motion-safe:scroll-smooth 2xl:text-[24px] ${customFont.variable} font-sans`}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
