@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import { findContentBySlug, findLatestPosts } from '~/utils/posts';
+import { generateArticleMetadata } from '~/utils/metadata';
 
 export const dynamicParams = false;
 
@@ -14,13 +15,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!post) {
     return notFound();
   }
-  return {
+  return generateArticleMetadata({
     title: post.title,
     description: post.description,
-    authors: post.authors,
+    slug: post.slug,
+    image: post.image,
+    publishDate: post.publishDate,
+    author: post.authors?.[0]?.name || 'Camilla Holsted',
     keywords: post.keywords,
-    category: post.category,
-  };
+  });
 }
 
 export async function generateStaticParams() {
@@ -34,15 +37,37 @@ export default async function Page({ params }: { params: { slug: string } }) {
     return notFound();
   }
   const jsonLd = {
-    '@context': 'http://schema.org',
-    '@type': 'Service',
-    name: post.title,
-    description: post.description,
-    image: post.image,
-    provider: {
-      '@type': 'Person',
-      name: 'Camilla Holsted',
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://mentalro.vercel.app/blog/${post.slug}`
     },
+    headline: post.title,
+    description: post.description,
+    image: post.image || 'https://mentalro.vercel.app/og-image.jpg',
+    datePublished: post.publishDate,
+    dateModified: post.publishDate,
+    author: {
+      '@type': 'Person',
+      name: post.authors?.[0]?.name || 'Camilla Holsted',
+      url: 'https://mentalro.vercel.app/om-mig'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mental Ro',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://mentalro.vercel.app/logo.png'
+      }
+    },
+    keywords: post.keywords?.join(', ') || 'doula, graviditet, fødsel',
+    articleSection: post.category || 'Fødsel',
+    inLanguage: 'da-DK',
+    potentialAction: {
+      '@type': 'ReadAction',
+      target: `https://mentalro.vercel.app/blog/${post.slug}`
+    }
   };
   return (
     <section className="mx-auto py-8 sm:py-16 lg:py-20">
